@@ -32,7 +32,7 @@ cron.schedule('0 0 9 * * *', () => {
         console.log(date);
         console.log(title);
         console.log(explanation);
-        const sms = `Here is the NASA image for ${formateDate(date)}\n\n ${url} \n\n Title: ${title} \n\nContext: ${explanation} \n\n`;
+        const sms = `Hey babe,\nhere is the NASA image for ${formateDate(date)}\n\n${url}\n\nTitle: ${title}\n\nContext: ${explanation}\n\n`;
         console.log(sms);
         sendEmail(sms);
     });
