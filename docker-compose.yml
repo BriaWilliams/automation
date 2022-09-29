@@ -1,0 +1,11 @@
+services:
+  nasasmsservice:
+    container_name: nasasmscontainer
+    build: .
+    image: nasasmscontainer:v1
+    networks:
+      - internalnet
+
+networks:
+  internalnet:
+    driver: bridge
