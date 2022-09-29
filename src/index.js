@@ -1,5 +1,5 @@
-import cron from "node-cron";
-import axios from "axios";
+import cron from 'node-cron';
+import axios from 'axios';
 import nodemailer from 'nodemailer';
 
 const NASA_API_URL = 'https://api.nasa.gov';
@@ -45,7 +45,7 @@ const formateDate = (date) => {
 
 const sendEmail = async (message) =>  {
   const transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
+    host: 'smtp-mail.outlook.com',
     port: 587,
     secure: false,
     auth: {
@@ -55,7 +55,7 @@ const sendEmail = async (message) =>  {
   });
   const response = await transporter.sendMail({
     from: '"👻" <>',
-    to: "",
+    to: '',
     subject: 'NASA Image',
     text: message
   });
