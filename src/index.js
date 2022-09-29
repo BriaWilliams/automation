@@ -54,8 +54,8 @@ const sendEmail = async (message) =>  {
     }
   });
   const response = await transporter.sendMail({
-    from: '"👻" <juniorro98@outlook.com>',
-    to: "juniorro98@outlook.com",
+    from: '"👻" <>',
+    to: "",
     subject: 'NASA Image',
     text: message
   });
