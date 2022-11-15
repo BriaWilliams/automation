@@ -23,7 +23,7 @@ console.log('Starting CRON schedule');
  See https://www.npmjs.com/package/node-cron for information about the Cron scheduling libraryh
 */
 
-cron.schedule('0 0 9 * * *', () => {
+cron.schedule('0 0 14 * * *', () => {
     http.get(`/planetary/apod?api_key=${NASA_API_KEY}`)
     .then(response => {
         console.log(response.data);
@@ -32,7 +32,7 @@ cron.schedule('0 0 9 * * *', () => {
         console.log(date);
         console.log(title);
         console.log(explanation);
-        const sms = `Hey babe,\nhere is the NASA image for ${formateDate(date)}\n\n${url}\n\nTitle: ${title}\n\nContext: ${explanation}\n\n`;
+        const sms = `Good morning Jellybean,\nhere is the NASA image for ${formateDate(date)}\n\n${url}\n\nTitle: ${title}\n\nContext: ${explanation}\n\n`;
         console.log(sms);
         sendEmail(sms);
     });
@@ -54,7 +54,7 @@ const sendEmail = async (message) =>  {
     }
   });
   const response = await transporter.sendMail({
-    from: '"👻" <>',
+    from: '"Zaddy" <>',
     to: '',
     subject: 'NASA Image',
     text: message
