@@ -23,7 +23,7 @@ console.log('Starting CRON schedule');
  See https://www.npmjs.com/package/node-cron for information about the Cron scheduling libraryh
 */
 
-cron.schedule('0 0 13 * * *', () => {
+cron.schedule('0 0 14 * * *', () => {
     http.get(`/planetary/apod?api_key=${NASA_API_KEY}`)
     .then(response => {
         console.log(response.data);
